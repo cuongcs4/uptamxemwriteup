@@ -138,17 +138,31 @@
 
 ### Factorization
 
+- Dùng lệnh `openssl rsa -pubin -inform PEM -text -noout < publickey.pem` để lấy **n** và **e**.
+- Dựa vào gợi ý dùng tool <https://www.alpertron.com.ar/ECM.HTM> để phân tích ra **p** và **q**. Từ đó tìm được flag.
+
 *Flag:* **HCMUS-CTF{smaLL_NumbeR}**
 
 ### Factorization Revenge
+
+- Tương tự với **Factorization**
 
 *Flag:* **HCMUS-CTF{haaaaah_what_do_you_really_want_from_meeeeeee}**
 
 ### Very Secure RSA
 
+- Vẫn tương tự như **Factorization**, decode ra được **HCMUS-CTF{c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646}**.
+- Chuỗi trong dấu {} là giá trị hash **SHA256** của chuỗi **1234567890**.
+- Thử submit **HCMUS-CTF{1234567890}** nhưng không thành công, submit lại với chuỗi giá trị hash thì OK.
+
 *Flag:* **HCMUS-CTF{c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646}**
 
 ### smalleeeee
+
+- Dùng câu lệnh `open ssl` để lấy **n** và **e** thì thấy e = 3.
+- Ta có c + n * x = m^e = m^3.
+- Chạy thử ta thấy được c + n * 1 chia hết cho 2^3!!!
+- Từ đó suy ra được **m** và đem xor ra được flag.
 
 *Flag:* **HCMUS-CTF{hello_from_the_other_side}**
 
