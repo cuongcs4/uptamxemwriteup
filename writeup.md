@@ -47,6 +47,8 @@
 - `nc 159.65.13.76 33100`.
 - Từ source code ta nhập userid là 12817 và **password** là **sUpErPassHCMUS** để có được flag.
 
+*Flag:* **HCMUS-CTF{Ohhh~Just_give_me_the_credential!!Nah}**
+
 ### secret
 
 - Kết nối với server và thử gõ H thì nó ra flag.
@@ -81,7 +83,7 @@
 ### Secret Agency
 
 - Sau khi truy cập vào địa chỉ <http://159.65.13.76:1337/> và view source, chúng ta thấy được dòng hint: *\<!-- secret agent = eevee -->*
-- Dùng curl --user-agent eevee <http://159.65.13.76:1337/> chúng ta sẽ thấy được flag.
+- Dùng `curl --user-agent eevee http://159.65.13.76:1337/` chúng ta sẽ thấy được flag.
 
 *Flag:* **HCMUS-CTF{+he_4g3nt_Izzz_eevoolution0123456}**
 
@@ -136,19 +138,19 @@
 
 ### Factorization
 
-pass
+*Flag:* **HCMUS-CTF{smaLL_NumbeR}**
 
 ### Factorization Revenge
 
-pass
+*Flag:* **HCMUS-CTF{haaaaah_what_do_you_really_want_from_meeeeeee}**
 
 ### Very Secure RSA
 
-pass
+*Flag:* **HCMUS-CTF{c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646}**
 
 ### smalleeeee
 
-pass
+*Flag:* **HCMUS-CTF{hello_from_the_other_side}**
 
 ---
 
